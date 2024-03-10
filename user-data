@@ -1,0 +1,24 @@
+#cloud-config
+autoinstall:
+  version: 1
+  identity:
+    hostname: bench
+    username: ubuntu
+    password: "$6$5ahRECvuEILBoN5A$jrADc6671UlPJhBRGtG8zC9A2vwdf4BKZyyjjrpwYWELbP0jYItcdPZKlma8R5xeix0TwHg1Ys3bYOtFi6.DS."
+  network:
+    network:
+      version: 2
+      ethernets:
+        enp1s0:
+          dhcp4: true
+  ssh:
+    install-server: true
+    allow-pw: true
+    authorized-keys: []
+  storage:
+    layout:
+      name: lvm
+  user-data:
+    disable_root: false
+  packages:
+    - openssh-server
